@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best You - Контакты</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <div class="menu">
+    <a href="index.html" class="button-nav"> Главная</a>
+    <a href="workouts.html" class="button-nav"> Тренировки</a>
+    <a href="nutrition.html" class="button-nav"> Питание</a>
+    <a href="gallery.html" class="button-nav"> Мотивация</a>
+    <a href="contacts.html" class="button-nav active"> Контакты</a>
+  </div>
+
+  <h1> Давай дружить</h1>
+  <img src="https://static.tildacdn.com/tild3133-6633-4038-b536-313234663337/contact.png" alt="чат поддержка" style="max-width:100%; border-radius:1rem;">
+  <p style="margin: 1rem 0;">Заполни форму, чтобы получить персональную консультацию по тренировкам/питанию или задать вопрос. Мы свяжемся с тобой </p>
+  
+  <div class="contact-form">
+    <form id="callbackForm">
+      <input type="text" id="nameInput" placeholder="Твоё имя *" required>
+      <input type="email" id="emailInput" placeholder="Email *" required>
+      <textarea id="messageInput" rows="3" placeholder="Расскажи о своих целях (например: хочу укрепить мышцы кора или похудеть)"></textarea>
+      <button type="button" class="btn" id="submitFormBtn">Отправить сообщение</button>
+    </form>
+  </div>
+  
+  <h2> Контакты в соцсетях</h2>
+  <ul class="custom-list">
+    <li>Instagram: @best_you_girl</li>
+    <li>Telegram-канал: t.me/best_you_fitness</li>
+    <li>Email: hello@bestyou.com</li>
+  </ul>
+  
+  <button class="btn" onclick="alert(' Подписывайся и получи чек-лист идеального утра!')">Получить гайд в Telegram</button>
+
+  <footer>
+     Создай лучшую версию себя — дисциплина, забота и любовь к себе. © Best You
+  </footer>
+</div>
+
+<script>
+  document.getElementById('submitFormBtn').addEventListener('click', function() {
+    const name = document.getElementById('nameInput').value.trim();
+    const email = document.getElementById('emailInput').value.trim();
+    const message = document.getElementById('messageInput').value.trim();
+    
+    if (!name || !email) {
+      alert('Пожалуйста, заполни имя и email ');
+    } else if (!email.includes('@')) {
+      alert('Введи корректный email :)');
+    } else {
+      alert(`Спасибо, ${name}! Мы свяжемся с тобой в ближайшее время и поможем стать лучшей версией себя );
+      document.getElementById('nameInput').value = '';
+      document.getElementById('emailInput').value = '';
+      document.getElementById('messageInput').value = '';
+    }
+  });
+</script>
+</body>
+</html>
